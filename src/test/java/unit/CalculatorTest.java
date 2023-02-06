@@ -69,7 +69,7 @@ public class CalculatorTest {
     @Test
     public void testMultiplication3() {
         double result = Calculator.multiply(3.14, 4.56);
-        assertThat(result, is(closeTo(14.3104, delta)));
+        assertThat(result, is(closeTo(14.3184, delta)));
     }
 
     /***
