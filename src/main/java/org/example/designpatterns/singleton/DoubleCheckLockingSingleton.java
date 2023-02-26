@@ -1,4 +1,4 @@
-package org.example.singleton;
+package org.example.designpatterns.singleton;
 
 /**
  * Method 3: Singleton With Lazy Initialization

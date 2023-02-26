@@ -1,4 +1,4 @@
-package org.example.singleton;
+package org.example.designpatterns.singleton;
 /***
  * Since enums are inherently serializable, we don't need to implement it with a serializable interface.
  * The reflection problem is also not there.
