@@ -3,14 +3,18 @@ package unit;
 import org.example.examples.Calculator;
 import org.hamcrest.Matchers;
 import org.junit.jupiter.api.Disabled;
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.CsvSource;
+import org.junit.jupiter.params.provider.NullAndEmptySource;
+import org.junit.jupiter.params.provider.ValueSource;
 
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.Matchers.*;
 import static org.junit.jupiter.api.Assertions.*;
 
+@DisplayName("Calculator Test Demo")
 public class CalculatorTest {
     double delta = 0.0001; //This allows for small differences between the expected and actual values that may be due to rounding errors or other small inaccuracies
 
@@ -67,6 +71,7 @@ public class CalculatorTest {
         assertThat(result, is(equalTo(12.0)));
     }
     @Test
+    @DisplayName("Muliplication")
     public void testMultiplication3() {
         double result = Calculator.multiply(3.14, 4.56);
         assertThat(result, is(closeTo(14.3184, delta)));
@@ -85,5 +90,12 @@ public class CalculatorTest {
     public void testAddition(double x, double y, double expected) {
         double result = Calculator.add(x, y);
         assertThat(result, is(closeTo(expected, delta)));
+    }
+
+    @ParameterizedTest
+    @NullAndEmptySource
+    @ValueSource(strings = { " ", "   ", "\t", "\n" })
+    void nullEmptyAndBlankStrings(String text) {
+        assertTrue(text.trim().isEmpty());
     }
 }
