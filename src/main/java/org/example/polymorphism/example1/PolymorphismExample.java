@@ -6,8 +6,8 @@ public class PolymorphismExample {
         Animal dog = new Dog();
         Animal cat = new Cat();
 
-        animal.sound();
-        dog.sound();
-        cat.sound();
+        animal.makeSound();
+        dog.makeSound();
+        cat.makeSound();
     }
 }

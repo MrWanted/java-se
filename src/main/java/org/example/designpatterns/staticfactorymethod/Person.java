@@ -9,6 +9,7 @@ public class Person {
         this.age = age;
     }
 
+    //returns an instance of a class
     public static Person createPerson(String name, int age) {
         if (name == null || name.trim().isEmpty()) {
             throw new IllegalArgumentException("Name cannot be null or empty");
